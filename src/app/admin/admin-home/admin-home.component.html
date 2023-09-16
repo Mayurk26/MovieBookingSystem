@@ -1,0 +1,33 @@
+<h2>All users List</h2>
+<ag-grid-angular
+  
+  class="ag-theme-alpine" 
+  [rowData]="rowData"
+  [columnDefs]="columnDefs"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged()"
+>
+
+</ag-grid-angular>
+
+<!-- The hidden template for the custom cell renderer -->
+<ng-template #actionRenderer let-params>
+  <button style="background-color: black;color: white;" (click)="params.onActionClick(params.data)">Action</button>
+</ng-template>
+
+<h2>All Movies List</h2>
+<ag-grid-angular
+  class="ag-theme-alpine movie-table" 
+  [rowData]="movieRowData"
+  [columnDefs]="movieColumnDefs"
+  (gridReady)="onMovieGridReady($event)"
+  
+>
+</ag-grid-angular>
+
+<!-- The hidden template for the custom cell renderer -->
+<ng-template #movieActionRenderer #updateActionRenderer let-params>
+  <button style="background-color: black;color: white;" (click)="onMovieActionClick(params.data)">Action</button>
+  <button style="background-color: black;color: white;" (click)="onUpdateActionClick(params.data)">Edit</button>
+</ng-template>
+

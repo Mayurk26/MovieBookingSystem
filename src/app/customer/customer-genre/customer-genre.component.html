@@ -1,0 +1,9 @@
+<h1>Genres</h1>
+<div class="genre-grid">
+    
+    <div class="genre-card" *ngFor="let genre of genres" (click)="selectedGenre(genre.name)">
+        <img [src]="genre.imageUrl" alt="{{genre.name}}" class="genre-image">
+        <h3 class="movie-title">{{genre.name}}</h3>
+    </div>
+    
+</div>

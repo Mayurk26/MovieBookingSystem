@@ -1,0 +1,80 @@
+.home{
+    background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height:100vh;
+    margin-top:-22px;
+}
+
+.home h1{
+    text-align: center;
+    padding-top: 80px;
+    font-family: cursive;
+    color:#c44c42;
+}
+
+.home h2{
+    
+        text-align: center;
+        padding-top: 30px;
+        font-family: cursive;
+        color:white;
+}
+
+.movie-grid{
+    display:flex;
+    flex-wrap: wrap;
+    gap:168px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom:0%;
+}
+
+.movie-card{
+    width:calc(33.33%-20px);
+    border: 2px solid black;
+    padding:10px;
+    border-radius:5px;
+}
+
+.movie-image{
+    width: 320px;
+    height:400px;
+    border-radius: 5px;
+}
+
+.movie-title{
+    font-size:20px;
+    font-weight: bold;
+}
+
+.movie-price{
+    color:black;
+    font-weight: bold;
+}
+
+.movie-description{
+    color:black;
+    font-weight: bold;
+}
+
+h2{
+    margin: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+.showmore{
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 30px;
+    margin-left: 1273px;
+}
+
+.showmore:hover{
+    color:rgb(103, 98, 98);
+}

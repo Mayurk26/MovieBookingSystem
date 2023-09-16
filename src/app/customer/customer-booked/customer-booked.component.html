@@ -1,0 +1,117 @@
+<div class="movie-details">
+    <div class="movie">
+    <div class="movie-image">
+      <img [src]="selectedMovie.image" alt="Movie Image" />
+    </div>
+    <div class="movie-info">
+      <h2>{{ selectedMovie.name }}</h2>
+      <p>Time Slot: {{ selectedMovie.timeslot }}</p>
+      <p>Date: {{ getdate() }}</p>
+      <p>Seat Nos: {{ selectedSeats.join(', ') }}</p>
+    </div>
+</div>
+
+  
+  <div class="right">
+    <div>
+  <div class="snacks-section">
+    <h3>Want to Add some snacks?</h3>
+    
+    <div class="snack-item" *ngFor="let snack of snacks">
+        <label>
+          <input type="checkbox" name="snack" [(ngModel)]="snack.selected" [value]="snack" />
+          {{ snack.name }} - Price: ₹{{ snack.price }}
+        </label>
+        <select [(ngModel)]="snack.selectedQuantity" [disabled]="!snack.selected">
+          <option *ngFor="let quantity of snackQuantities" [value]="quantity">{{ quantity }}</option>
+        </select>
+      </div>
+
+  </div>
+  
+  <!-- <div class="total-price">
+    <p>Total Price: ₹{{getTotalPrice() }}</p>
+  </div> -->
+  
+  <div class="payment-options">
+    <h3>Payment Options</h3>
+    
+    
+        <input type="radio" name="paymentMethod" value="credit" (click)="selectPaymentMethod('credit')"> Credit Card
+      
+      <label>
+        <input type="radio" name="paymentMethod" value="upi" (click)="selectPaymentMethod('upi')"> UPI
+      </label>
+  </div>
+  <div class="payment">
+  <div class="payment-form" *ngIf="selectedPaymentMethod === 'credit'" >
+    <h3>Credit Card Payment</h3>
+  
+  <div [hidden]="!creditCardForm.invalid" class="error-message">
+    *Invalid inputs
+  </div>
+  <form [formGroup]="creditCardForm" (ngSubmit)="makePaymentCreditCard()">
+    <label for="cardNumber">Card Number</label>
+    <input type="text" id="cardNumber" formControlName="cardNumber" placeholder="XXXXXXXXXXXXXXXX" required>
+
+    <label for="expiry">Expiry Date</label>
+    <input type="text" id="expiry" formControlName="expiry" placeholder="MM/YY" required>
+
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" formControlName="cvv" placeholder="***" required>
+
+    <button type="submit" [disabled]="!creditCardForm.valid" [style.cursor]="!creditCardForm.valid ? 'not-allowed' : ''">Make Payment</button>
+  </form>
+  </div>
+  
+  <div class="payment-form2" *ngIf="selectedPaymentMethod === 'upi'">
+    <h3>UPI Payment</h3>
+  
+  <div [hidden]="!upiForm.invalid" class="error-message">
+    *Enter valid id
+  </div>
+  <form [formGroup]="upiForm" (ngSubmit)="makePaymentUpi()">
+    <label for="upiId">UPI ID</label>
+    <input type="text" id="upiId" formControlName="upiId" placeholder="Enter upiId" required>
+
+    <button type="submit" [disabled]="!upiForm.valid" [style.cursor]="!upiForm.valid ? 'not-allowed' : ''">Make Payment</button>
+  </form>
+  </div> 
+</div>
+</div>
+<div class="discount-coupons">
+    <h3>Discount Coupons</h3>
+    <ul>
+        <li *ngFor="let coupon of discountCoupons" (click)="applyDiscount(coupon.code)">
+            {{coupon.code}} - {{coupon.discountPercentage}}% Off
+        </li> 
+    </ul>
+</div>
+<div class="bill-container">
+    <h2>Bill</h2>
+    <div class="item">
+        <div>Ticket Price:</div>
+        <div>{{temp}}</div>
+    </div>
+    <div class="item">
+        <div>Snacks:</div>
+        <div>{{calculateTotalPrice()}}</div>
+    </div>
+    <div class="item">
+        <div>GST:</div>
+        <div>{{0}}</div>
+    </div>
+    <div *ngIf="selectedCouponCode" class="item">
+        <div>Selected Coupon:</div>
+        <div>{{ selectedCouponCode }}</div>
+    </div>
+    <div class="item">
+        <div class="tprice">Total Price:</div>
+        <div class="tprice">₹{{getTotalPrice()-temptotal}}</div>
+    </div>
+
+</div>
+  
+</div>
+</div>
+

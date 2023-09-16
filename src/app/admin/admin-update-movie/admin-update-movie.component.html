@@ -1,0 +1,18 @@
+<div class="add-movie">
+    <h1>Update New Movie</h1>
+    <form #addMovi="ngForm" (ngSubmit)="updateMovie()" class="common-form">
+        <input type="text" [(ngModel)]="updatedMovie.name" name="name" class="form-input" placeholder="Enter Movie name"/>
+        <input type="text" [(ngModel)]="updatedMovie.price" name="price" class="form-input" placeholder="Enter Movie price"/>
+        <label for="timeslot">Choose Time slot</label>
+        <select id="timeslot" [(ngModel)]="updatedMovie.timeSlot" name="timeslot">
+            <option value="default" selected disabled>Select Timeslot</option>
+            <option value="9:00AM-12:00PM" >Morning(9:00AM-12:00PM)</option>
+            <option value="12:00PM-3:00PM">Afternoon(12:00PM-3:00PM)</option>
+            <option value="4:00PM-7:00PM">Evening(4:00PM-7:00PM)</option>
+        </select>
+        <textarea type="text" ngModel class="form-input" name="description" placeholder="Enter Description"></textarea>
+        <input type="text" name="image" [(ngModel)]="updatedMovie.image" class="form-input" placeholder="Enter Movie image url"/>
+        <button class="form-button">Update</button>
+
+    </form>
+</div>

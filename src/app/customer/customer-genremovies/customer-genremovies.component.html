@@ -1,0 +1,12 @@
+
+<div class="movie-grid">
+    
+    <div class="movie-card" *ngFor="let movie of genreMovie">
+        <a routerLink="/customer-movie"><img [src]="movie.image" alt="{{movie.name}}" class="movie-image"></a>
+        <h3 class="movie-title">{{movie.name}}</h3>
+        <p class="movie-price">Price:  ₹{{movie.price}}</p>
+        <p class="movie-description">Good Movie</p>
+        <button class="viewbtn" (click)="viewdetail()">View Details</button>
+    </div>
+    
+</div>

@@ -1,0 +1,29 @@
+<div class="login-container" *ngIf="showLogin">
+    <h2>Login</h2>
+    <div *ngIf="invalidCredentials" class="error-message">
+        Invalid Credentials.Please check your email and password
+    </div>
+    <form (ngSubmit)="signIn()" class="common-form">
+        <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Enter email" class="form-input" required>
+        <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter password" class="form-input" required>
+        <!-- <select title="Select Role" id="role" name="role" [(ngModel)]="selectedRole" class="form-input">
+            <option value="admin" default>Admin</option>
+            <option value="customer">Customer</option>
+        </select> -->
+        <button type="submit" class="form-button">Sign In</button>
+        <a (click)="openSignup()">Don't have account? Click to SignUp</a>
+    </form>
+</div>
+<div class="login-container" *ngIf="!showLogin">
+    <h2>Sign Up</h2>
+    <div *ngIf="userExists" class="error-message">
+        User with the same email already exists.
+    </div>
+    <form (ngSubmit)="addUser()" class="common-form">
+        <input type="text" id="name" [(ngModel)]="newUser.name" name="name" placeholder="Enter Name" class="form-input" required>
+        <input type="email" id="email" [(ngModel)]="newUser.email" name="email" placeholder="Enter email" class="form-input" required>
+        <input type="password" id="password" [(ngModel)]="newUser.password" name="password" placeholder="Enter password" class="form-input" required>
+        <button type="submit" class="form-button">Sign Up</button>
+        <a (click)="openLogin()">Already have account? Click to Login</a>
+    </form>
+</div>

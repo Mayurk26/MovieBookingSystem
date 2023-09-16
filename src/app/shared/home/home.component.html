@@ -1,0 +1,15 @@
+<div class="home">
+    <h1>Welcome to CineGlobe</h1>
+    <h2>Empowering your movie experience through effortless booking</h2>
+</div>
+<h2>Movies</h2>
+<div class="movie-grid">
+    <div class="movie-card" *ngFor="let movie of movies">
+        <img [src]="movie.imageurl" alt="{{movie.name}}" class="movie-image">
+        <h3 class="movie-title">{{movie.name}}</h3>
+        <p class="movie-price">Price: ₹{{movie.price}}</p>
+        <p class="movie-description">Description: {{movie.description}}</p>
+    </div>
+    <!-- <div class="showmore"><a routerLink="customer-home">showMore-></a></div> -->
+</div>
+<div class="showmore"><a routerLink="customer-home">showMore-></a></div>

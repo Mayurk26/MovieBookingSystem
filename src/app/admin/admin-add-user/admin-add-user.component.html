@@ -1,0 +1,18 @@
+<div class="add-user">
+    <h1>Add New User</h1>
+    <form #addUse="ngForm" (ngSubmit)="add(addUse.value)" class="common-form">
+        <input type="text" [(ngModel)]="newUser.name" name="name" class="form-input" placeholder="Enter name"/>
+        <input type="email" [(ngModel)]="newUser.email" name="email" class="form-input" placeholder="Enter email"/>
+        <input type="password" [(ngModel)]="newUser.password" name="password" class="form-input" placeholder="Enter password"/>
+        <select id="role" name="role" [(ngModel)]="newUser.role" class="form-input">
+            <option value="admin">Admin</option>
+            <option value="customer">Customer</option>
+        </select>
+        <button class="form-button" (click)="addUser()">Add</button>
+
+    </form>
+</div>
+
+
+
+

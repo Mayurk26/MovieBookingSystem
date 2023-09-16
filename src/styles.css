@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+body{
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+}
+
+
+
+.common-form{
+    text-align: center;
+    display: flex;
+    margin:auto;
+    flex-direction:column;
+    width:300px;
+}
+
+.form-input{
+    height:35px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border: 2px solid black;
+    color: black;
+    border-radius:7px;
+}
+
+.form-button{
+    height:35px;
+    border:2px solid black;
+    cursor:pointer;
+    border-radius:8px;
+    background-color: black;
+    color:white;
+}
+
+.form-button:hover{
+    background-color: rgb(65, 64, 64);
+}

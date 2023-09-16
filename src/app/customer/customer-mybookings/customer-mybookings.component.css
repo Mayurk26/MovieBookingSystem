@@ -1,0 +1,48 @@
+.my-bookings{
+    max-width: 950px;
+    margin-bottom: 21px;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right:5%;
+}
+
+.booking{
+    border: 1px solid black;
+    padding: 15px;
+    margin: 5px 0px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+
+.movie-info{
+    display:flex;
+}
+
+.movie-info img{
+    max-width: 160px;
+    height: 225px;
+    margin-right: 60px;
+    margin-left: 10px;
+}
+
+.movie-info .details{
+    flex:1;
+    font-size: 15px;
+}
+
+.details button{
+    background-color: black;
+    color:white;
+    border:none;
+    padding: 5px 10px;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+h3{
+    font-family: cursive;
+    font-size:20px;
+}
+

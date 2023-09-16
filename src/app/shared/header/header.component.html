@@ -1,0 +1,37 @@
+<nav class="nav">
+    <h1><a routerLink="/">CineGlobe</a></h1>
+    <!-- <div *ngIf="menuType==='default' || menuType==='customer'" class="nav-search">
+        <input type="text" [(ngModel)]="searchQuery" placeholder="search for Movies"/>
+        <button (click)="onSearch()">Search</button>
+    </div> -->
+    <div *ngIf="menuType==='default' || menuType==='customer'" class="nav-search">
+        <input type="text" [(ngModel)]="searchQuery" (input)="onSearchInputChange()" (keydown.backspace)="clearSuggestions()" placeholder="search for Movies"/>
+        <button class="clear-button" *ngIf="searchQuery" (click)="clearSearch()">&#9587;</button>
+        <ul class="auto-suggestions">
+            <li *ngFor="let suggestion of autoSuggestions" (click)="selectSuggestion(suggestion)">{{suggestion}}</li>
+        </ul>
+        <button (click)="onSearch()">Search</button>
+    </div>
+    <div [ngSwitch]="menuType" class="sections">
+        <ul *ngSwitchCase="'default'">
+            <li><a routerLink =''>Home</a></li>
+            <li><a routerLink ='login'>Login</a></li>
+            
+        </ul>
+        <ul *ngSwitchCase="'admin'">
+            <li><a routerLink ='admin-home'>Home</a></li>
+            <!-- <li><a routerLink ='admin-add-user'>AddUser</a></li> -->
+            <li><a routerLink ='admin-add-movie'>Add Movies</a></li>
+            <li><a routerLink ='admin-total-bookings'>Total Bookings</a></li>
+            <li><a routerLink ='' (click)="logout()">Logout</a></li>
+            
+        </ul>
+        <ul *ngSwitchCase="'customer'">
+            <li><a routerLink ='customer-home'>Home</a></li>
+            <li><a routerLink ='customer-mybookings'>My Bookings</a></li>
+            <li><a routerLink ='customer-genre'>Genres</a></li>
+            <li><a routerLink ='' (click)="logout()">Logout</a></li>
+        </ul>
+
+    </div>
+</nav>

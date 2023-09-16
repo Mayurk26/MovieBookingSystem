@@ -1,0 +1,24 @@
+
+
+<div class="my-bookings">
+    <h2>My Bookings</h2>
+    <div class="booking" *ngFor="let booking of bookings">
+        <div class="movie-info">
+            <img [src]="booking.moviePoster" alt="Movie Poster"/>
+            <div class="details">
+                <h3>{{booking.movieName}}</h3>
+                <p>No. of Seats: {{booking.numSeats}}</p>
+                <p>Total Amount: ₹{{booking.totalAmount}}</p>
+                <p>Date: {{booking.date | date:'mediumDate'}}</p>
+                <p>Show Time : {{booking.showTime}}</p>
+                <button (click)="book()" [disabled]="shouldDisableButton(booking.date)"
+                        [style.backgroundColor]="shouldDisableButton(booking.date) ? 'gray' : ''"
+                        [style.color]="shouldDisableButton(booking.date) ? 'white' : ''"
+                        [style.cursor]="shouldDisableButton(booking.date) ? 'not-allowed' : ''"
+                        *ngIf="!shouldDisableButton(booking.date)">
+                        Cancel Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

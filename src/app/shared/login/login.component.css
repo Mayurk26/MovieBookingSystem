@@ -1,0 +1,24 @@
+h2{
+    text-align: center;
+    font-family: cursive;
+}
+
+.login-container{
+    border-radius: 10px;
+    border: 2px solid black;
+    margin: 95px 540px;
+    padding: 41px 63px;
+    background-color: beige;
+    margin-bottom: 185px;
+}
+
+.error-message{
+    color:red;
+    margin:7px;
+}
+
+.login-container a{
+    margin-top: 10px;
+    color:blue;
+    cursor:pointer;
+}

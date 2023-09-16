@@ -1,0 +1,80 @@
+<div class="movie-detail">
+    <div class="movie-poster">
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/1012/223/desktop-wallpaper-bahubali-bahubali-thumbnail.jpg" alt="Movie poster">
+    </div>
+    <div class="movie-book">
+        <div class="date-dropdown">
+            <label for="dateSelect">Select Date:</label>
+            <select id="dateSelect" name="dateSelect" [(ngModel)]="selectedDate">
+              <option *ngFor="let dateOption of dateOptions" [value]="dateOption">{{ dateOption }}</option>
+            </select>
+          </div>
+         <ul class="showcase">
+            <li>
+                <div class="seat-available"></div>
+                <small>available</small>
+            </li>
+            <li>
+                <div class="seat-selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat-reserved"></div>
+                <small>reserved</small>
+            </li>
+        </ul>
+        <div class="screen">Screen</div>
+        <div class="theater">
+            <div class="seatno">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+            </div>
+            <div class="row" *ngFor="let rowLabel of rowLabels">
+                <div class="rowlabel">{{rowLabel}}</div>
+                <div class="seat" *ngFor="let seat of getSeatsInRow(rowLabel)" (click)="toggleSeat(seat)">
+                  <div [class]="seat.status" (mouseenter)="onSeatHover(seat)" (mouseleave)="onSeatLeave()">{{seat.id===hoveredSeatLabel ? hoveredSeatLabel : '' }}</div>
+                </div>
+              </div>
+              
+        </div> 
+    </div>
+
+</div>
+<div class="movie-details" *ngFor="let movie of movies">
+    
+    <h2 class="movie-name">{{movie.name}}</h2>
+    <p class="movie-price">Price: ₹{{movie.price}}</p>
+    <p class="movie-description">{{movie.description}}</p>
+    <div class="booking-options">
+        <label for="time-slot">Select Time Slot: </label>
+        <select id="time-slot" class="time-slot">
+            <option value="morning">Morning(9:00AM-12:00PM)</option>
+            <option value="afternoon">Afternoon(12:00PM-3:00PM)</option>
+            <option value="evening">Evening(4:00PM-7:00PM)</option>
+        </select>
+        <div class="tickets">
+            <label>Seat No's: </label>
+            <div class="tick" *ngFor="let a of arr">
+                <p>{{a}}</p>
+            </div>
+        </div>
+        <div class="total-price">
+        <p>Total Price: ₹{{ totalPrice }}</p>
+        </div>
+        <button routerLink='customer-booked' class="book-button" (click)="book()" 
+                [disabled]="disablebook()" 
+                [style.backgroundColor]="disablebook() ? 'gray':''">
+                Book now
+        </button>
+    </div>
+
+</div>
+

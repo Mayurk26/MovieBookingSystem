@@ -1,0 +1,152 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding:8px 83px;
+    /* background-color: #b7b0b06e;    */
+    background-color: white;
+    position:fixed;
+    width:88vw;
+    z-index:1000;
+}
+
+.nav h1{
+    color: #ad5cba;
+    margin: 0;
+    font-size: 40px;
+}
+
+.nav ul{
+    /* display: inline-flex; */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.nav li a{
+    text-decoration: none;
+    color:#884b92;
+}
+
+/* nav .nav-search{
+    margin-top: 5px;
+    flex: 1;
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+nav .nav-search input{
+    flex:1;
+    color:black;
+    border: 1px solid black;
+    height: 35px;
+    border-right: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 10px;
+}
+
+nav .nav-search button{
+    color:black;
+    border: 1px solid ;
+    height: 39px;
+    border-left: 0px;
+    cursor:pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+} */
+
+nav .nav-search button:hover{
+    background-color:rgb(202, 202, 202);
+    border: 1px solid ;
+    height: 39px;
+    border-left: 0px;
+    cursor:pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: 500ms;
+}
+
+
+h1 a{
+    color:#884b92;
+    text-decoration: none;
+}
+
+
+nav .nav-search{
+    margin-top: 5px;
+    flex: 1;
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+}
+
+nav .nav-search input{
+    flex:1;
+    color:black;
+    border: 1px solid black;
+    height: 35px;
+    border-right: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 30px;
+}
+
+nav .nav-search button{
+    color:black;
+    border: 1px solid ;
+    height: 39px;
+    border-left: 0px;
+    cursor:pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.auto-suggestions{
+    list-style: none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    background-color: white;
+    border : 1px solid #ccc;
+    width:100%;
+    top:100%;
+    left:0;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index:-1;
+    
+   
+}
+
+.auto-suggestions li{
+    padding: 5px;
+    cursor:pointer;
+    border-bottom:1px solid #ccc;
+}
+
+.auto-suggestions li:hover{
+    background-color: #f0f0f0;
+}
+
+
+.clear-button{
+
+    border:none;
+    cursor:pointer;
+    outline: none;
+    padding: 0px 5px;
+    margin-left: 1px;
+    color: white;
+}
+
+.sections ul{
+    display:inline-flex;
+}
